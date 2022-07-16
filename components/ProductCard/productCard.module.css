@@ -1,0 +1,54 @@
+.image {
+  margin-bottom: 50px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #2e363e;
+}
+
+.container {
+  max-width: 380px;
+  min-height: 580px;
+  flex-basis: 400px;
+  margin: 20px 20px 0px 0px;
+  background: #FFFFFF;
+  border: 1px solid #F2F6FA;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.containerForDescription {
+  margin-left: 44px;
+}
+
+.description {
+  font-weight: 400;
+  font-size: 16px;
+  color: #2e363e;
+  margin-bottom: 24px;
+}
+
+.price {
+  font-weight: 500;
+  font-size: 24px;
+  color: #434b53;
+  margin-bottom: 24px;
+}
+
+.button {
+  padding: 20px 40px;
+  width: 163px;
+  height: 68px;
+  border: none;
+  background: #fed84c;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 18px;
+  color: #2E363E;
+}
+
+.button:hover{
+  cursor: pointer;
+}
