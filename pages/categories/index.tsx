@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Container from '@root/components/Container';
 import { Category } from '@root/interfaces';
 import { URLS } from '@root/constants/urls';
-import styles from '@root/pages/Categories/Categories.module.css';
+import styles from '@root/pages/categories/categories.module.css';
 
 interface CategoriesProps {
   categories: Category[];

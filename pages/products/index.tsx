@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Container from '@root/components/Container';
 import { Product } from '@root/interfaces';
 import { URLS } from '@root/constants/urls';
-import styles from '@root/pages/products/Products.module.css';
+import styles from '@root/pages/products/products.module.css';
 
 interface ProductsProps {
   products: Product[];
