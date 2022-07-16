@@ -8,19 +8,16 @@
     "no-loops"
   ],
   "settings": {
-    "import/ignore": [
-      "node_modules/react-native/index\\.js$"
-    ],
     "import/resolver": {
       "alias": {
         "map": [
           [
-            "@root",
-            "src"
+            "@styles",
+            "styles"
           ],
           [
-            "@config",
-            "src/config"
+            "@root",
+            "./*"
           ]
         ],
         "extensions": [
@@ -67,18 +64,12 @@
           "pathGroups": [
             {
               "group": "builtin",
-              "pattern": "react-native",
-              "position": "before"
-            },
-            {
-              "group": "builtin",
               "pattern": "react",
               "position": "before"
             }
           ],
           "pathGroupsExcludedImportTypes": [
-            "react",
-            "react-native"
+            "react"
           ]
         }
       ],
@@ -86,5 +77,6 @@
       "sort-vars": "error",
       "no-loops/no-loops": "error"
     }
-  }
+  },
+  "extends": "next/core-web-vitals"
 }

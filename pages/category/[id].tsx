@@ -22,10 +22,8 @@ const Category: NextPage<CategoryProps> = (props) => {
 };
 
 export async function getServerSideProps({ query, req }: ProductNextPageContext) {
-  const response = await fetch(`http://localhost:1337/api/categories/${query.id}`);
+  const response = await fetch(`${process.env.API_URL}/categories/${query.id}`);
   const { data: category } = await response.json();
-
-  console.log(category);
 
   return {
     props: { category },

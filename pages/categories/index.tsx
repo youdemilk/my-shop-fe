@@ -28,8 +28,9 @@ const Categories: NextPage<CategoriesProps> = (props) => {
 };
 
 export async function getServerSideProps(context) {
-  const response = await fetch('http://localhost:1337/api/categories');
+  const response = await fetch(`${process.env.API_URL}/categories`);
   const { data: categories } = await response.json();
+  console.log(categories);
 
   return {
     props: { categories },

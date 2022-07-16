@@ -28,7 +28,7 @@ const Products: NextPage<ProductsProps> = (props) => {
 };
 
 export async function getServerSideProps(context) {
-  const response = await fetch('http://localhost:1337/api/products');
+  const response = await fetch(`${process.env.API_URL}/products`);
   const { data: products } = await response.json();
 
   return {
