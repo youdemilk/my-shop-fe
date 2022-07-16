@@ -1,0 +1,11 @@
+node_modules
+dist
+.idea/
+android/
+ios/
+patches/
+metro.config.js
+babel.config.js
+jest.config.js
+.env
+.env.*

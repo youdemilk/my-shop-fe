@@ -1,0 +1,90 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "sort-destructure-keys",
+    "@typescript-eslint",
+    "import",
+    "no-loops"
+  ],
+  "settings": {
+    "import/ignore": [
+      "node_modules/react-native/index\\.js$"
+    ],
+    "import/resolver": {
+      "alias": {
+        "map": [
+          [
+            "@root",
+            "src"
+          ],
+          [
+            "@config",
+            "src/config"
+          ]
+        ],
+        "extensions": [
+          ".ts",
+          ".tsx",
+          ".js",
+          ".jsx",
+          ".json"
+        ]
+      }
+    },
+    "extends": [
+      "plugin:react/recommended",
+      "prettier",
+      "prettier/@typescript-eslint",
+      "prettier/react",
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:import/warnings",
+      "plugin:import/errors",
+      "plugin:react/recommended"
+    ],
+    "rules": {
+      "sort-destructure-keys/sort-destructure-keys": 2,
+      "import/no-unresolved": "error",
+      "import/order": [
+        "error",
+        {
+          "alphabetize": {
+            "order": "asc"
+          },
+          "groups": [
+            "builtin",
+            "external",
+            "internal",
+            "parent",
+            "sibling",
+            "index",
+            "object",
+            "unknown"
+          ],
+          "newlines-between": "always",
+          "pathGroups": [
+            {
+              "group": "builtin",
+              "pattern": "react-native",
+              "position": "before"
+            },
+            {
+              "group": "builtin",
+              "pattern": "react",
+              "position": "before"
+            }
+          ],
+          "pathGroupsExcludedImportTypes": [
+            "react",
+            "react-native"
+          ]
+        }
+      ],
+      "no-console": "error",
+      "sort-vars": "error",
+      "no-loops/no-loops": "error"
+    }
+  }
+}
