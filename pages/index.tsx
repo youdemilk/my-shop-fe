@@ -2,6 +2,7 @@ import { NextPage } from 'next';
 import { ProductCard } from '@root/components/ProductCard';
 import styles from '@root/styles/container.module.css';
 import { API_URL } from '@root/constants/general';
+import { Order } from '@root/components/Order';
 
 const Home: NextPage = ({ data }) => {
   return (
@@ -9,6 +10,7 @@ const Home: NextPage = ({ data }) => {
       {data.data.map((item) => {
         return <ProductCard key={item.id} item={item} />;
       })}
+      <Order />
     </div>
   );
 };
