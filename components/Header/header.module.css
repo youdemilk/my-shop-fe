@@ -1,0 +1,46 @@
+.headerContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 46px 0;
+    background-color: transparent;
+}
+
+.headerIconsContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 70px
+}
+
+.headerTitle {
+    margin: 0;
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 30px;
+}
+
+.headerIconContainer {
+    align-items: start;
+    display: flex;
+    flex-direction: row;
+    gap: 15px
+}
+
+.headerIconPinText {
+    font-weight: 400;
+    font-size: 12px;
+    margin: 0;
+}
+
+.headerIconPhonePrimaryText {
+    margin: 0;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.headerIconPhoneSecondaryText {
+    margin: 0;
+    font-weight: 400;
+    font-size: 13px;
+}

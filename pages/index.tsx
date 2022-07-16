@@ -2,14 +2,29 @@ import { NextPage } from 'next';
 import { ProductCard } from '@root/components/ProductCard';
 import styles from '@root/styles/container.module.css';
 import { API_URL } from '@root/constants/general';
+import Header from '@root/components/Header';
+import { Icon } from '@root/interfaces/Icon';
+import { getImage } from '@root/utils/getImage';
 
-const Home: NextPage = ({ data }) => {
-  console.log('QQQQ data', data);
+interface HomePageProps {
+  products: any[];
+  icons: Icon[];
+}
+
+const Home: NextPage<HomePageProps> = ({ products, icons }) => {
+  const pinIcon = getImage(icons.find((icon) => icon.attributes.name === 'pin')) || '';
+  const phoneIcon = getImage(icons.find((icon) => icon.attributes.name === 'phone')) || '';
+
   return (
-    <div className={styles.container}>
-      {data.data.map((item) => {
-        return <ProductCard key={item.id} item={item} />;
-      })}
+    <div>
+      <Header phoneIconUrl={phoneIcon} pinIconUrl={pinIcon} />
+      <main>
+        <div className={styles.container}>
+          {products.map((item) => {
+            return <ProductCard key={item.id} item={item} />;
+          })}
+        </div>
+      </main>
     </div>
   );
 };
@@ -17,12 +32,14 @@ const Home: NextPage = ({ data }) => {
 export async function getServerSideProps() {
   // Fetch data from external API
 
-  console.log('QQQQ API_URL', API_URL);
-  const res = await fetch(`${API_URL}/products?populate=*`);
-  const data = await res.json();
+  const getProducts = await fetch(`${API_URL}/products?populate=*`);
+  const { data: products } = await getProducts.json();
+
+  const getIcons = await fetch(`${API_URL}/icons?populate=*`);
+  const { data: icons } = await getIcons.json();
 
   // Pass data to the page via props
-  return { props: { data } };
+  return { props: { products, icons } };
 }
 
 export default Home;
