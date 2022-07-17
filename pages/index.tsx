@@ -7,6 +7,7 @@ import { Icon } from '@root/interfaces/Icon';
 import { getImage } from '@root/utils/getImage';
 import { Order } from '@root/components/Order';
 import { Product } from '@root/interfaces/Product';
+import Confectioner from '@root/components/Confectioner';
 
 interface HomePageProps {
   products: Product[];
@@ -29,6 +30,7 @@ const Home: NextPage<HomePageProps> = (props) => {
           })}
         </div>
         <Order />
+        <Confectioner />
       </main>
     </div>
   );
