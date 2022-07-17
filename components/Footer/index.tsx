@@ -11,7 +11,7 @@ export const Footer: NextPage = () => {
         <div className={styles.title}>Чтобы сделать заказ, укажите ваш телефон</div>
         <div className={styles.subTitle}>Мы перезвоним в течении 15 минут, чтобы уточнить ваши пожелания</div>
         <div className={styles.buttonsContainer}>
-          <input className={styles.inputPhone} type={'number'} placeholder={'Номер телефона'} />
+          <input className={styles.inputPhone} type={'tel'} placeholder={'Номер телефона'} />
           <button className={styles.button}>Сделать заказ</button>
         </div>
       </div>
