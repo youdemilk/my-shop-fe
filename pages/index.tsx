@@ -10,6 +10,8 @@ import { Product } from '@root/interfaces/Product';
 import { Gallery } from '@root/components/Galery';
 import { Footer } from '@root/components/Footer';
 import Confectioner from '@root/components/Confectioner';
+import Introducing from '@root/components/Introducing';
+import Products from '@root/components/Products';
 
 interface HomePageProps {
   products: Product[];
@@ -21,17 +23,15 @@ const Home: NextPage<HomePageProps> = (props) => {
   const { products, icons, galleryIcons } = props;
 
   const pinIcon = getImage(icons.find((icon) => icon.attributes.name === 'pin')) || '';
-  const phoneIcon = getImage(icons.find((icon) => icon.attributes.name === 'phone')) || '';
+  const phoneIcon = getImage(icons.find((icon) => icon.attributes.name === 'call')) || '';
 
   return (
     <div>
-      <Header phoneIconUrl={phoneIcon} pinIconUrl={pinIcon} />
       <main>
-        <div className={styles.container}>
-          {products.map((product) => {
-            return <ProductCard key={product.id} product={product} />;
-          })}
-        </div>
+        <Introducing>
+          <Header phoneIconUrl={phoneIcon} pinIconUrl={pinIcon} />
+        </Introducing>
+        <Products products={products} />
         <Order />
         <Confectioner />
         <Gallery galleryIcons={galleryIcons} />

@@ -1,0 +1,16 @@
+.productsTitle {
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 60px;
+    text-align: center;
+    letter-spacing: -1px;
+    color: #2E363E;
+    margin: 0;
+    padding-bottom: 80px;
+}
+
+.productsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
