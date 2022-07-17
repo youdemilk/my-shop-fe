@@ -1,0 +1,33 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex: 1;
+}
+
+.titleContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 60px;
+    color: #2E363E;
+    margin-bottom: 14px;
+}
+
+.subTitle{
+    font-weight: 400;
+    font-size: 24px;
+    color: #2E363E;
+    margin-bottom: 80px;
+
+}
+
+.item{
+    margin: 4px;
+}
