@@ -7,14 +7,17 @@ import { Icon } from '@root/interfaces/Icon';
 import { getImage } from '@root/utils/getImage';
 import { Order } from '@root/components/Order';
 import { Product } from '@root/interfaces/Product';
+import { Gallery } from '@root/components/Galery';
+import { Footer } from '@root/components/Footer';
 
 interface HomePageProps {
   products: Product[];
   icons: Icon[];
+  galleryIcons: Icon[];
 }
 
 const Home: NextPage<HomePageProps> = (props) => {
-  const { products, icons } = props;
+  const { products, icons, galleryIcons } = props;
 
   const pinIcon = getImage(icons.find((icon) => icon.attributes.name === 'pin')) || '';
   const phoneIcon = getImage(icons.find((icon) => icon.attributes.name === 'phone')) || '';
@@ -29,6 +32,8 @@ const Home: NextPage<HomePageProps> = (props) => {
           })}
         </div>
         <Order />
+        <Gallery galleryIcons={galleryIcons} />
+        <Footer />
       </main>
     </div>
   );
@@ -41,7 +46,10 @@ export async function getServerSideProps() {
   const getIcons = await fetch(`${API_URL}/icons?populate=*`);
   const { data: icons } = await getIcons.json();
 
-  return { props: { products, icons } };
+  const getGalleryIcons = await fetch(`${API_URL}/cupcakes?populate=*`);
+  const { data: galleryIcons } = await getGalleryIcons.json();
+
+  return { props: { products, icons, galleryIcons } };
 }
 
 export default Home;
