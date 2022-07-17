@@ -3,6 +3,7 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import berry from '@root/public/berry.png';
 import leaf from '@root/public/leaf.png';
+import bg from '@root/public/bg.png';
 import styles from '@root/components/Introducing/introducing.module.css';
 
 interface IntroducingProps {
@@ -28,17 +29,14 @@ const Introducing: NextPage<IntroducingProps> = (props) => {
           <p className={styles.introducingText}>9 различных видов на выбор</p>
         </div>
       </div>
-      <div className={styles.firstBerryImage}>
-        <Image src={berry} alt={'berry'} />
-      </div>
-      <div className={styles.secondBerryImage}>
-        <Image src={berry} alt={'berry'} />
-      </div>
-      <div className={styles.thirdBerryImage}>
+      <div className={styles.berryImage}>
         <Image src={berry} alt={'berry'} />
       </div>
       <div className={styles.leafImage}>
         <Image src={leaf} alt={'leaf'} />
+      </div>
+      <div className={styles.backgroundContainer}>
+        <Image src={bg} alt={'background'} />
       </div>
     </div>
   );
